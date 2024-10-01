@@ -61,11 +61,16 @@ manager = WebSocketManager()
 # Middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://gpt-researcher-costom.vercel.app",
+        "https://www.tanalyze.app",
+        "https://tanalyze.app"
+    ],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # You can restrict this to specific methods if needed
+    allow_headers=["*"],  # You can restrict this to specific headers if needed
 )
+
 
 # Constants
 DOC_PATH = os.getenv("DOC_PATH", "./my-docs")
